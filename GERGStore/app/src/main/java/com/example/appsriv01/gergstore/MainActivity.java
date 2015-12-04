@@ -236,8 +236,6 @@ public class MainActivity extends Activity implements  ConnectionCallbacks, OnCo
 
 
 
-
-
     /*@Override
     public void onClick(View v)
     {
