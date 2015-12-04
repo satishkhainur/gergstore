@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffffff"
+    android:background="#fff"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:weightSum="100"
@@ -49,19 +49,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#cccccc"/>
-                   <!-- <LinearLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_weight="28">-->
-                        <TextView
+                        android:orientation="horizontal"
+                        android:layout_weight="28">
+                       <!-- <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/Login"
                             android:gravity="center"
                             android:textSize="25sp"
                             android:layout_weight="28"/>
-                    <!--</LinearLayout>-->
+-->
+                        <com.google.android.gms.common.SignInButton
+                            android:id="@+id/sign_in_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"/>
+
+                        <com.facebook.login.widget.LoginButton
+                            android:id="@+id/login_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"/>
+
+
+                    </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -80,6 +94,7 @@
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:hint="@string/username"
+                android:textCursorDrawable="@drawable/color_cursor"
                 android:background="@android:color/transparent"/>
             <ImageView
                 android:layout_width="wrap_content"
@@ -106,6 +121,7 @@
                 android:layout_marginLeft="10dp"
                 android:hint="@string/pass"
                 android:inputType="textPassword"
+                android:textCursorDrawable="@drawable/color_cursor"
                  android:background="@android:color/transparent"/>
             <ImageView
                 android:layout_width="wrap_content"
@@ -152,6 +168,22 @@
             android:layout_height="wrap_content"
             android:text="@string/forgotpass"/>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+       <!-- <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />-->
+
+        <!-- <com.facebook.login.widget.LoginButton
+             android:id="@+id/login_facebook"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"/>-->
     </LinearLayout>
 
 
