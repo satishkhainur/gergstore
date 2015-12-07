@@ -3,8 +3,10 @@ package com.example.appsriv01.gergstore;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.pm.PackageInstaller;
 import android.net.Uri;
 import android.os.Bundle;
+import android.service.textservice.SpellCheckerService;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
@@ -28,6 +36,9 @@ import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListe
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.plus.Plus;
+import com.facebook.FacebookSdk;
+
+import java.util.Arrays;
 
 public class MainActivity extends Activity implements  ConnectionCallbacks, OnConnectionFailedListener
 {
@@ -66,14 +77,16 @@ public class MainActivity extends Activity implements  ConnectionCallbacks, OnCo
 
     private ConnectionResult mConnectionResult;
 
-
+    private LoginButton loginFb;
+    private static String APP_ID = "1210956735597793";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
-
+        CallbackManager callbackManager =null;
 
         Button btnsignup = (Button) findViewById(R.id.btnsignup);
         Button btnlogin = (Button) findViewById(R.id.btnlogin);
@@ -81,6 +94,34 @@ public class MainActivity extends Activity implements  ConnectionCallbacks, OnCo
         final EditText username = (EditText) findViewById(R.id.username);
         final EditText password = (EditText) findViewById(R.id.password);
         sign_in_button  = (SignInButton) findViewById(R.id.sign_in_button);
+
+        loginFb= (LoginButton)findViewById(R.id.login_button);
+        loginFb.setReadPermissions("user_friends");
+        callbackManager = CallbackManager.Factory.create();
+
+        loginFb.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                Toast.makeText(getApplicationContext(), "In Fb success", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onCancel() {
+                // App code
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                // App code
+            }
+        });
+
+
+
+
+
+
 
 
         //sign_in_button.setOnClickListener(this);
@@ -105,15 +146,27 @@ public class MainActivity extends Activity implements  ConnectionCallbacks, OnCo
         });
 
 
-        btnsignup.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+        /*loginFb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), SignUp.class);
-                startActivity(intent);
-
             }
-        });
+        });*/
+
+
+                btnsignup.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent intent = new Intent(getApplicationContext(), SignUp.class);
+                        startActivity(intent);
+
+                    }
+                });
 
 
 
@@ -139,7 +192,7 @@ public class MainActivity extends Activity implements  ConnectionCallbacks, OnCo
         forgotpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "You forgotten Password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"You forgotten Password", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -210,12 +263,15 @@ public class MainActivity extends Activity implements  ConnectionCallbacks, OnCo
                 mGoogleApiClient.connect();
             }
         }
+
     }
 
     @Override
     public void onConnected(Bundle arg0) {
         mSignInClicked = false;
         Toast.makeText(this, "User is connected!", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getApplicationContext(), SignUp.class);
+        startActivity(intent);
 
     }
 
@@ -227,7 +283,8 @@ public class MainActivity extends Activity implements  ConnectionCallbacks, OnCo
 
     }
 
-    private void signInWithGplus() {
+    private void signInWithGplus()
+    {
         if (!mGoogleApiClient.isConnecting()) {
             mSignInClicked = true;
             resolveSignInError();
@@ -244,9 +301,11 @@ public class MainActivity extends Activity implements  ConnectionCallbacks, OnCo
             case R.id.sign_in_button:
                 signInWithGplus();
                 break;
-
         }
-
-
     }*/
+
+
+
+
+
 }

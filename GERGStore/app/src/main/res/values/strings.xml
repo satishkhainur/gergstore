@@ -8,4 +8,5 @@
     <string name="username">USERNAME</string>
     <string name="pass">PASSWORD</string>
     <string name="title_activity_sign_up">SignUp</string>
+    <string name="facebook_app_id">1210956735597793</string>
 </resources>
