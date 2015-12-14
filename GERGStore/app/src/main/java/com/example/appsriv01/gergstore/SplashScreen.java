@@ -113,7 +113,7 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
                     public void onSuccess(LoginResult loginResult) {
 
                         System.out.println("Success");
-                        Intent i = new Intent(SplashScreen.this,HomeScreen.class);
+                        Intent i = new Intent(SplashScreen.this,MenuScreen.class);
                         startActivity(i);
                         GraphRequest.newMeRequest(
                                 loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {

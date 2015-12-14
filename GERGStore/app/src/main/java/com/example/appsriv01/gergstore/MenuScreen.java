@@ -6,15 +6,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Toast;
 
-public class HomeScreen extends AppCompatActivity {
+public class MenuScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
-        Toast.makeText(getApplicationContext(),"In Home Screen Class",Toast.LENGTH_LONG).show();
+        setContentView(R.layout.activity_menu_screen);
 
     }
 

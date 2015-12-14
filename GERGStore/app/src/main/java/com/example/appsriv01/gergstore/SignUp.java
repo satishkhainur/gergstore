@@ -105,7 +105,7 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
                     public void onSuccess(LoginResult loginResult) {
 
                         System.out.println("Success");
-                        Intent i = new Intent(SignUp.this,HomeScreen.class);
+                        Intent i = new Intent(SignUp.this,MenuScreen.class);
                         startActivity(i);
                         GraphRequest.newMeRequest(
                                 loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
