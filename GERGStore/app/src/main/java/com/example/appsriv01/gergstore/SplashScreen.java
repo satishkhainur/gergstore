@@ -17,7 +17,7 @@ public class SplashScreen extends AppCompatActivity {
         System.out.println("IN Flash Screen Class *****");
 
 
-        Thread background =new Thread(){
+       /* Thread background =new Thread(){
 
             @Override
             public void run() {
@@ -43,5 +43,6 @@ public class SplashScreen extends AppCompatActivity {
 
         super.onDestroy();
     }
-
+*/
+    }
 }
