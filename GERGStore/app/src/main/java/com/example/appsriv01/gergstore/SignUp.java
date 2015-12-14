@@ -6,6 +6,8 @@ import android.widget.Toast;
 
 public class SignUp extends Activity {
 
+    private static String LOG_TAG = "In Signup Class";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

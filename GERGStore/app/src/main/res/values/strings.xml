@@ -9,4 +9,8 @@
     <string name="pass">PASSWORD</string>
     <string name="title_activity_sign_up">SignUp</string>
     <string name="facebook_app_id">1210956735597793</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_login_page">LoginPage</string>
+    <string name="title_activity_login_screen">LoginScreen</string>
+    <string name="title_activity_home_screen">HomeScreen</string>
 </resources>
