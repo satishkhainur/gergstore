@@ -30,19 +30,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_weight="40"
-        android:weightSum="80"
+        android:weightSum="90"
         android:background="@drawable/my_shape">
 
 
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/gergstore"
+            android:layout_height="0dp"
+            android:id="@+id/signupid"
+            android:background="@drawable/newusergergstoreimage"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:layout_marginTop="2dp"
-            android:layout_weight="12" />
+            android:layout_weight="30" />
 
         <View
             android:layout_width="match_parent"
@@ -51,9 +52,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email Address"
+            android:hint="Email Address "
             android:layout_marginLeft="5dp"
-            android:layout_weight="16"
+            android:layout_weight="15"
             android:background="@android:color/transparent"
             android:textCursorDrawable="@drawable/color_cursor"
             />
@@ -67,7 +68,7 @@
             android:layout_height="wrap_content"
             android:hint="Password"
             android:layout_marginLeft="5dp"
-            android:layout_weight="16"
+            android:layout_weight="15"
             android:background="@android:color/transparent"
             android:textCursorDrawable="@drawable/color_cursor"
             />
@@ -81,7 +82,7 @@
             android:layout_height="wrap_content"
             android:hint="Gender"
             android:layout_marginLeft="5dp"
-            android:layout_weight="16"
+            android:layout_weight="15"
             android:background="@android:color/transparent"
             android:textCursorDrawable="@drawable/color_cursor"
             />
@@ -94,24 +95,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Date of birth "
+            android:inputType="date"
             android:layout_marginLeft="5dp"
-            android:layout_weight="16"
+            android:layout_weight="15"
             android:background="@android:color/transparent"
             android:textCursorDrawable="@drawable/color_cursor"
             />
-</LinearLayout>
+
+
+
+    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:gravity="center">
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SignUp"
+                android:id="@+id/signup"
                 android:textSize="20sp"
                 android:layout_gravity="center"
-                android:background="#3399ff"
+                android:src="@drawable/newusersignupbutton"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"/>
 
@@ -187,14 +192,12 @@
     android:layout_marginTop="10dp"
     android:gravity="center">
 
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/twitter"/>
-    <ImageButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
         android:src="@drawable/facebook"/>
     <ImageView
         android:layout_width="wrap_content"

@@ -8,9 +8,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.StaticLayout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.facebook.CallbackManager;
@@ -24,6 +27,7 @@ import com.facebook.login.LoginResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.drive.Drive;
 import com.google.android.gms.plus.Plus;
 
 import org.json.JSONException;
@@ -46,7 +50,10 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
 
     private ImageView fbbutton;
 
+    private ImageView gplusbutton;
+
     public  static CallbackManager callbackmanager;
+
 
 
     @Override
@@ -58,7 +65,8 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
 
 
         Button btnsignin = (Button)findViewById(R.id.btnsignin);
-        Button btnsignup = (Button)findViewById(R.id.btnsignup);
+          Button     btnsignup = (Button)findViewById(R.id.btnsignup);
+
 
         btnsignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +79,8 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+               // updateSizeInfo();
                 Intent i = new Intent(getBaseContext(),SignUp.class);
                 startActivity(i);
             }
@@ -81,6 +91,9 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
 
 
         fbbutton = (ImageView) findViewById(R.id.login_button);
+
+        gplusbutton = (ImageView) findViewById(R.id.gplusbutton);
+
         fbbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,10 +102,47 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
         });
 
 
+        gplusbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                signInWithGplus();
+
+            }
+        });
+
+
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this).addApi(Plus.API, null)
                 .addScope(Plus.SCOPE_PLUS_LOGIN).build();
+
+        /*mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addApiIfAvailable(Drive.API)
+                .addScope(Drive.SCOPE_FILE)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .build();*/
+
+
+
+
+/*
+         //  For finding size of button in pixels //
+
+        top.post(new Runnable(){
+            public void run(){
+                int height = top.getHeight();
+                int weight = top.getWidth();
+
+
+                System.out.println("HEIGHT gergs    ++"+height);
+                System.out.println("WIDTH ++"+weight);
+
+            }
+        });
+*/
+
 
 
     }
@@ -113,7 +163,7 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
                     public void onSuccess(LoginResult loginResult) {
 
                         System.out.println("Success");
-                        Intent i = new Intent(SplashScreen.this,MenuScreen.class);
+                        Intent i = new Intent(SplashScreen.this, MainActivity.class);
                         startActivity(i);
                         GraphRequest.newMeRequest(
                                 loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
@@ -232,7 +282,7 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
     public void onConnected(Bundle arg0) {
         mSignInClicked = false;
         Toast.makeText(this, "User is connected!", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(getApplicationContext(), SignUp.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
 
     }
@@ -252,5 +302,26 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
             resolveSignInError();
         }
     }
+
+
+
+/*
+     //2nd method For finding image size or button in pixels //
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        // TODO Auto-generated method stub
+        super.onWindowFocusChanged(hasFocus);
+        updateSizeInfo();
+    }
+
+
+    private void updateSizeInfo(){
+
+        System.out.println(String.valueOf("Gergstore Landing's Width(pixels): " + btnsignup1.getWidth()));
+        System.out.println(String.valueOf("Button's Height(pixels): " + btnsignup.getHeight()));
+    }
+*/
+
+
 
 }

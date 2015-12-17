@@ -109,6 +109,8 @@ public class LoginScreen extends Activity implements  ConnectionCallbacks, OnCon
             @Override
             public void onClick(View v) {
 
+
+
                 Intent intent = new Intent(getApplicationContext(), SignUp.class);
                 startActivity(intent);
 
@@ -122,8 +124,9 @@ public class LoginScreen extends Activity implements  ConnectionCallbacks, OnCon
             public void onClick(View v) {
 
 
-                if(editusername.getText().toString().equals("admin") && editpassword.getText().toString().equals("admin")){
-                    Intent i = new Intent(LoginScreen.this,MenuScreen.class);
+
+                if(editusername.getText().toString().equalsIgnoreCase("admin") && editpassword.getText().toString().equalsIgnoreCase("admin")){
+                    Intent i = new Intent(LoginScreen.this,MainActivity.class);
                             startActivity(i);
                 }
 
@@ -186,6 +189,15 @@ public class LoginScreen extends Activity implements  ConnectionCallbacks, OnCon
         });
 
 
+
+
+
+
+
+
+
+
+
     }
 
 
@@ -208,7 +220,7 @@ public class LoginScreen extends Activity implements  ConnectionCallbacks, OnCon
                     public void onSuccess(LoginResult loginResult) {
 
                         System.out.println("Success");
-                        Intent i = new Intent(LoginScreen.this,SignUp.class);
+                        Intent i = new Intent(LoginScreen.this, MainActivity.class);
                         startActivity(i);
                         GraphRequest.newMeRequest(
                                 loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {

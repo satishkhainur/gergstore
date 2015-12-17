@@ -2,6 +2,7 @@ package com.example.appsriv01.gergstore;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 import android.app.Activity;
 import android.content.Intent;
@@ -53,6 +54,10 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
 
     public  static CallbackManager callbackmanager;
 
+    private ImageView signup;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +66,8 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
 
 
         fbbutton = (ImageView) findViewById(R.id.login_button);
+        signup = (ImageView) findViewById(R.id.signup);
+
         fbbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,10 +76,19 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
         });
 
 
+
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this).addApi(Plus.API, null)
                 .addScope(Plus.SCOPE_PLUS_LOGIN).build();
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent i = new Intent(SignUp.this,MainActivity.class);
+                startActivity(i);
+            }
+        });
 
 
        /* sign_in_button.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +121,7 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
                     public void onSuccess(LoginResult loginResult) {
 
                         System.out.println("Success");
-                        Intent i = new Intent(SignUp.this,MenuScreen.class);
+                        Intent i = new Intent(SignUp.this,SignUp.class);
                         startActivity(i);
                         GraphRequest.newMeRequest(
                                 loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
@@ -245,6 +261,8 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
             resolveSignInError();
         }
     }
+
+
 
 
 
