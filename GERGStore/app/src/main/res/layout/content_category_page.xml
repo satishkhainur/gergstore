@@ -2,30 +2,258 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:weightSum="100"
     android:layout_height="match_parent"
     android:id="@+id/relativeLayout">
+    <include layout="@layout/app_bar"
+        android:id="@+id/app_bar"/>
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="50">
+    android:layout_height="wrap_content"
+    android:background="#464646"
+    android:orientation="vertical"
+    android:layout_weight="70">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#A4A430"
+        android:text="FASHION STORE"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#fff"
+        android:text="womens wear"/>
     <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#464646"
         android:layout_weight="50">
     </android.support.v4.view.ViewPager>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="50"
-        android:background="#ffffff">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="HI Hi"/>
+        android:layout_gravity="center"
+        android:text="220 Items"
+        android:layout_marginBottom="12dp"
+        android:textColor="@android:color/white"/>
     </LinearLayout>
+/////Below Layout
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="30">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+       <GridLayout
+           android:layout_height="wrap_content"
+           android:id="@+id/gridView"
+           android:layout_width="match_parent"
+           android:paddingLeft="15dp"
+           android:paddingRight="15dp"
+           android:rowCount="4"
+           android:columnCount="4">
+
+           //11
+           <ImageView
+               android:id="@+id/imageclick"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/twitter"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="05dp"
+               android:layout_marginTop="05dp"
+               android:text="Click Here"/>
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="100dp"
+               android:src="@drawable/facebook"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="05dp"
+               android:layout_marginLeft="05dp"
+               android:text="Partywear"/>
+
+
+
+           //2
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/twitter"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="05dp"
+               android:layout_marginTop="05dp"
+               android:text="DesignerWear"/>
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="100dp"
+               android:src="@drawable/facebook"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="05dp"
+               android:layout_marginLeft="05dp"
+               android:text="Partywear"/>
+
+           //11
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/twitter"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="05dp"
+               android:layout_marginTop="05dp"
+               android:text="DesignerWear"/>
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="100dp"
+               android:src="@drawable/facebook"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="05dp"
+               android:layout_marginLeft="05dp"
+               android:text="Partywear"/>
+
+
+
+           //11
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/twitter"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="05dp"
+               android:layout_marginTop="05dp"
+               android:text="DesignerWear"/>
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="100dp"
+               android:src="@drawable/facebook"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="05dp"
+               android:layout_marginLeft="05dp"
+               android:text="Partywear"/>
+
+///last
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/twitter"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="05dp"
+               android:layout_marginTop="05dp"
+               android:text="DesignerWear"/>
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="100dp"
+               android:src="@drawable/facebook"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="05dp"
+               android:layout_marginLeft="05dp"
+               android:text="Partywear"/>
+
+
+
+           //2
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/twitter"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="05dp"
+               android:layout_marginTop="05dp"
+               android:text="DesignerWear"/>
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="100dp"
+               android:src="@drawable/facebook"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="05dp"
+               android:layout_marginLeft="05dp"
+               android:text="Partywear"/>
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/twitter"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="05dp"
+               android:layout_marginTop="05dp"
+               android:text="DesignerWear"/>
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="100dp"
+               android:src="@drawable/facebook"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="05dp"
+               android:layout_marginLeft="05dp"
+               android:text="Partywear"/>
+
+
+
+           //2
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/twitter"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="05dp"
+               android:layout_marginTop="05dp"
+               android:text="DesignerWear"/>
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="100dp"
+               android:src="@drawable/facebook"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="05dp"
+               android:layout_marginLeft="05dp"
+               android:text="Partywear"/>
+
+
+
+       </GridLayout>
+</ScrollView>
 
 </LinearLayout>
+    </LinearLayout>

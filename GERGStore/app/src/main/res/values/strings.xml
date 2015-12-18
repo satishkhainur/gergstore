@@ -17,4 +17,7 @@
     <string name="title_activity_home_screen">HomeScreen</string>
     <string name="title_activity_menu_screen">MenuScreen</string>
     <string name="title_activity_category_page">CategoryPage</string>
+    <string name="title_activity_sub_category">SubCategory</string>
+    <string name="title_activity_sub_category_page">SubCategoryPage</string>
+    <string name="title_activity_product_screen">ProductScreen</string>
 </resources>

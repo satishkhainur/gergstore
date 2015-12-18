@@ -1,6 +1,7 @@
 package com.example.appsriv01.gergstore;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,6 +29,7 @@ public class CategoryPage extends FragmentActivity {
 
     TextView t1, t2, t3, t4, t5, t6, t7, t8, t9;
     ImageView im1, im2, ig3, ig4, ig5;
+    private ImageView imageclick;
 
     static final int NUM_ITEMS = 6;
     //ImageFragmentPagerAdapter imageFragmentPagerAdapter;
@@ -44,6 +46,15 @@ public class CategoryPage extends FragmentActivity {
 
         viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(mCustomPagerAdapter);
+        imageclick =(ImageView)findViewById(R.id.imageclick);
+
+        imageclick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CategoryPage.this,SubCategoryPage.class);
+                startActivity(i);
+            }
+        });
 
 
     }
@@ -56,11 +67,11 @@ public class CategoryPage extends FragmentActivity {
 
         int[] mResources = {
                 R.drawable.landingbackground,
-                R.drawable.loginscreenloginbutton,
+                R.drawable.category,
                 R.drawable.landingbackground,
-                R.drawable.twitter,
-                R.drawable.facebook,
-                R.drawable.loginscreensignupbutton
+                R.drawable.category,
+                R.drawable.landingbackground,
+                R.drawable.category
         };
 
         public CustomPagerAdapter(Context context) {
