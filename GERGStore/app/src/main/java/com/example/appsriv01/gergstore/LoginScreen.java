@@ -71,9 +71,9 @@ public class LoginScreen extends Activity implements  ConnectionCallbacks, OnCon
         System.out.println("In Login Class ******");
 
 
-        Button btnsignup = (Button) findViewById(R.id.btnsignup);
+        ImageView btnsignup = (ImageView) findViewById(R.id.btnsignup);
 
-        Button btnlogin = (Button) findViewById(R.id.btnlogin);
+        ImageView btnlogin = (ImageView) findViewById(R.id.btnlogin);
 
         // App Forgot Password
         TextView forgotpassword = (TextView) findViewById(R.id.forgot);

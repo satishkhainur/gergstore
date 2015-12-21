@@ -20,4 +20,7 @@
     <string name="title_activity_sub_category">SubCategory</string>
     <string name="title_activity_sub_category_page">SubCategoryPage</string>
     <string name="title_activity_product_screen">ProductScreen</string>
+    <string name="title_activity_cart_screen">CartScreen</string>
+    <string name="title_activity_cartpage">Cartpage</string>
+    <string name="title_activity_cart">Cart</string>
 </resources>

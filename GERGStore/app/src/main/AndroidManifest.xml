@@ -70,6 +70,10 @@
         <activity
             android:name=".ProductScreen"
             android:label="@string/title_activity_product_screen"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Cart"
+            android:label="@string/title_activity_cart"
             android:theme="@style/AppTheme"></activity>
     </application>
 

@@ -9,25 +9,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-public class ProductScreen extends AppCompatActivity {
-
-    private Button cart;
+public class Cart extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_screen);
+        setContentView(R.layout.activity_cart);
+        Button addcart = (Button)findViewById(R.id.addcart);
 
-        cart = (Button)findViewById(R.id.addcart);
-        cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent i = new Intent(ProductScreen.this,Cart.class);
-                startActivity(i);
 
-            }
-        });
 
     }
 

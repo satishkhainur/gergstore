@@ -14,15 +14,15 @@
     android:layout_width="match_parent"
     android:layout_height="58dp"
     android:background="#2a96e7" >
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/navigation"
-
-    android:layout_weight="1"
-    android:layout_marginLeft="5dp"
-    android:layout_gravity="center"
-     />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/arrowok"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="center"
+        />
     <LinearLayout
         android:layout_width="250dp"
         android:layout_height="30dp"
@@ -32,32 +32,29 @@
         android:background="@drawable/roundedshape"
         android:layout_marginLeft="10dp">
 
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:background="@android:color/transparent"
-        android:textCursorDrawable="@drawable/color_cursor"
-        />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/transparent"
+            android:textCursorDrawable="@drawable/color_cursor"
+            />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
             android:layout_gravity="center"
             android:src="@drawable/search"/>
-        </LinearLayout>
+    </LinearLayout>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/carticon"
+        android:src="@drawable/house"
         android:layout_weight="1"
         android:layout_marginTop="2dp"
-       android:layout_gravity="center"
-
+        android:layout_gravity="center"
         android:id="@+id/imageView" />
 
 
 </LinearLayout>
-<!--
-</android.support.v7.widget.Toolbar>-->
