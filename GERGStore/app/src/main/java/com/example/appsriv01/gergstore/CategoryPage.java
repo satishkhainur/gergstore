@@ -11,6 +11,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,9 +30,34 @@ import android.widget.ImageView;
 public class CategoryPage extends FragmentActivity {
 
 
-    TextView t1, t2, t3, t4, t5, t6, t7, t8, t9;
-    ImageView im1, im2, ig3, ig4, ig5;
-    private ImageView imageclick;
+
+    GridView cat_gird;
+    String[] cat_txt = {
+            "DesignerWear","PartyWear",
+            "DesignerWear","PartyWear",
+            "DesignerWear","PartyWear",
+            "DesignerWear","PartyWear",
+            "DesignerWear","PartyWear",
+            "DesignerWear","PartyWear",
+            "DesignerWear","PartyWear",
+            "DesignerWear"
+
+    };
+    int[] cat_image = {
+            R.drawable.fbicon24x24,R.drawable.twitter,
+            R.drawable.fbicon24x24,R.drawable.twitter,
+            R.drawable.fbicon24x24,R.drawable.twitter,
+            R.drawable.fbicon24x24,R.drawable.twitter,
+            R.drawable.fbicon24x24,R.drawable.twitter,
+            R.drawable.fbicon24x24,R.drawable.twitter,
+            R.drawable.fbicon24x24,R.drawable.twitter,
+            R.drawable.fbicon24x24
+    };
+
+
+   // TextView t1, t2, t3, t4, t5, t6, t7, t8, t9;
+   // ImageView im1, im2, ig3, ig4, ig5;
+  //  private ImageView imageclick;
 
     static final int NUM_ITEMS = 6;
     //ImageFragmentPagerAdapter imageFragmentPagerAdapter;
@@ -40,13 +68,15 @@ public class CategoryPage extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_page);
-
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         mCustomPagerAdapter = new CustomPagerAdapter(this);
 
         viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(mCustomPagerAdapter);
-        imageclick =(ImageView)findViewById(R.id.imageclick);
+
+
+      /*  imageclick =(ImageView)findViewById(R.id.imageclick);
 
         imageclick.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +84,25 @@ public class CategoryPage extends FragmentActivity {
                 Intent i = new Intent(CategoryPage.this,SubCategoryPage.class);
                 startActivity(i);
             }
-        });
+        });*/
+
+
+
+//////
+
+     cat_gird = (GridView) findViewById(R.id.category_page_grid);
+        cat_gird.setAdapter(new CustGridCategory(CategoryPage.this,cat_txt,cat_image));
+
+       /* cat_gird.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Intent i = new Intent(CategoryPage.this,SubCategoryPage.class);
+                startActivity(i);
+
+            }
+        });*/
 
 
     }

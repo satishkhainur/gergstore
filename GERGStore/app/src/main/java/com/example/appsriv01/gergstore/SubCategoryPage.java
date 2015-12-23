@@ -2,23 +2,18 @@ package com.example.appsriv01.gergstore;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class SubCategoryPage extends AppCompatActivity {
 
 
-    private ImageView[] imagesub1 = new ImageView[1000];
-    private ImageView imagesub;
-    private  TextView text11,text12,text13;
+
+    //private ImageView imagesub;
+   // private  TextView text11,text12,text13;
     String[] text1 = {
             "Product1",
             "Product2",
@@ -103,21 +98,21 @@ public class SubCategoryPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub_category_page);
        // grid = (GridView) findViewById(R.id.gridView);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
 
 
-
-        imagesub = (ImageView) findViewById(R.id.imagesub);
+       /* imagesub = (ImageView) findViewById(R.id.imagesub);₹
         text11 = (TextView) findViewById(R.id.grid_subprod1);
         text12 = (TextView) findViewById(R.id.grid_subprod2);
         text13 = (TextView) findViewById(R.id.grid_subprod3);
-
+*/
 
 
         GridView grid = (GridView) findViewById(R.id.gridview);
-        grid.setAdapter(new GridSubcategory(SubCategoryPage.this, text1, text2, text3, imageId));
+        grid.setAdapter(new CustGridSubcategory(SubCategoryPage.this, text1, text2, text3, imageId));
 
-        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+     /*   grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
@@ -127,7 +122,7 @@ public class SubCategoryPage extends AppCompatActivity {
 
             }
         });
-
+*/
 
 
 }

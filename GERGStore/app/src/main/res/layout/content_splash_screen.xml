@@ -61,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:background="#fff"
+        android:src="@drawable/bgforsocialmedia"
         android:layout_weight="03">
         <TextView
             android:layout_width="wrap_content"
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="03"
         android:gravity="top|center"
-        android:background="#fff"
+        android:src="@drawable/bgforsocialmedia"
         android:orientation="horizontal">
 
 
@@ -87,12 +87,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
-            android:src="@drawable/facebooksplash"/>
+            android:src="@drawable/fbicon24x24"/>
         <ImageView
             android:id="@+id/gplusbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/gplusq"/>
+            android:src="@drawable/gicon24x24"/>
 
     </LinearLayout>
 

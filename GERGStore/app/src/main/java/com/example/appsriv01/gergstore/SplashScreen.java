@@ -187,7 +187,7 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
                                                 // System.out.println("JSON Result" + str_firstname);
                                                 String str_lastname = json.getString("last_name");
 
-                                                //System.out.println("JSON Result" + str_lastname);
+                                                //System.out.println("JSON Result" + str_lastname);₹
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }

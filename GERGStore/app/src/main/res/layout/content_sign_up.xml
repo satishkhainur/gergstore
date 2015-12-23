@@ -14,7 +14,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@drawable/whitebg600x900"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:orientation="vertical"
@@ -23,7 +23,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="30">
+        android:layout_weight="50">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="40"
+        android:layout_weight="30"
         android:weightSum="90"
         android:background="@drawable/my_shape">
 
@@ -113,11 +113,10 @@
     </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="10">
+            android:layout_height="80dp">
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/signup"
                 android:src="@drawable/newusersignupbutton"
                 android:layout_marginLeft="20dp"
@@ -140,22 +139,21 @@
             android:layout_weight="5"
             android:paddingLeft="50dp"
             android:paddingRight="20dp"
-            android:layout_gravity="center">
+            android:gravity="top">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/left"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_gravity="top">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_weight="2"
                 android:text="OR"
                 />
@@ -166,11 +164,11 @@
             android:layout_weight="5"
             android:paddingLeft="20dp"
             android:paddingRight="50dp"
-            android:layout_gravity="center">
+            android:gravity="top">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center|end"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/left"/>
         </LinearLayout>
 
@@ -180,11 +178,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_weight="05"
-    android:gravity="center">
+    android:gravity="center|top">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text="Connect Using "
         android:textSize="12sp"/>
 
@@ -203,11 +200,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
-        android:src="@drawable/facebook"/>
+        android:src="@drawable/fbicon24x24"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/googleplus"/>
+        android:src="@drawable/gicon24x24"/>
 
 </LinearLayout>
     <LinearLayout

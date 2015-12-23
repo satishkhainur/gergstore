@@ -78,10 +78,11 @@
 </LinearLayout>
 
 
-            <ScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="85">
+
              <GridView
                     android:id="@+id/gridview"
                     android:layout_width="match_parent"
@@ -94,7 +95,8 @@
                     android:gravity="center"
                     />
 
-            </ScrollView>
+
+            </LinearLayout>
 
 
 

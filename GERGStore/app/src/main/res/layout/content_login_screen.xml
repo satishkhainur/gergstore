@@ -11,176 +11,177 @@
     android:paddingBottom="20dp"
     tools:context="com.example.appsriv01.gergstore.MainActivity">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:background="#fff"
-                android:weightSum="100"
-                android:orientation="vertical">
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="25">
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="20"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@drawable/whitebg600x900"
         android:weightSum="100"
-        android:background="@drawable/my_shape">
+        android:orientation="vertical">
 
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@drawable/newusergergstoreimage"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_weight="40" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#cccccc"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_weight="10">
+            android:layout_weight="25">
 
-            <TextView
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="20"
+            android:weightSum="100"
+            android:background="@drawable/my_shape">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/newusergergstoreimage"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="40" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cccccc"/>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="LOGIN"
-                android:textSize="20sp"/>
+                android:orientation="horizontal"
+                android:layout_weight="10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="LOGIN"
+                    android:textSize="20sp"/>
 
 
 
 
 
 
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cccccc"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|start"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:hint="@string/username"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:background="@android:color/transparent"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/username24x24"
+                    android:layout_marginRight="5dp"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cccccc"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_weight="25">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|start"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:hint="@string/pass"
+                    android:inputType="textPassword"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:background="@android:color/transparent"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/pwdicon24x24"
+                    android:layout_marginRight="5dp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#cccccc"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/username"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center|start"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:hint="@string/username"
-                android:textCursorDrawable="@drawable/color_cursor"
-                android:background="@android:color/transparent"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/contact"
-                android:layout_marginRight="5dp"/>
-        </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#cccccc"/>
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:orientation="horizontal"
-            android:gravity="center"
             android:layout_weight="25">
 
-            <EditText
-                android:id="@+id/password"
+            <ImageView
+                android:id="@+id/btnsignup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center|start"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:hint="@string/pass"
-                android:inputType="textPassword"
-                android:textCursorDrawable="@drawable/color_cursor"
-                android:background="@android:color/transparent"/>
+                android:background="@drawable/loginscreensignupbutton"
+                android:onClick="signup"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"/>
+            <View
+                android:layout_width="5dp"
+                android:layout_height="wrap_content"/>
             <ImageView
+                android:id="@+id/btnlogin"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/security"
-                android:layout_marginRight="5dp"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/loginscreenloginbutton"
+                android:layout_marginTop="10dp"
+                android:onClick="login"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/forgot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forgotpass"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+
 
         </LinearLayout>
 
     </LinearLayout>
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="20">
-
-        <ImageView
-            android:id="@+id/btnsignup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:src="@drawable/loginscreensignupbutton"
-            android:onClick="signup"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"/>
-        <View
-            android:layout_width="5dp"
-            android:layout_height="wrap_content"/>
-        <ImageView
-            android:id="@+id/btnlogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/loginscreenloginbutton"
-            android:layout_marginTop="10dp"
-            android:onClick="login"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/forgot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/forgotpass"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-
-
-
-    </LinearLayout>
-
-</LinearLayout>
 </LinearLayout>
