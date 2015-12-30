@@ -88,6 +88,7 @@ public class CategoryPage extends FragmentActivity {
                 R.drawable.category
                 };
 
+
         public CustomPagerAdapter(Context context)
         {
             mContext = context;
