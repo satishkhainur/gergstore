@@ -1,21 +1,16 @@
-package com.example.appsriv01.gergstore;
+package com.example.appsriv01.gergstore.Activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.text.StaticLayout;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.appsriv01.gergstore.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -27,7 +22,6 @@ import com.facebook.login.LoginResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.drive.Drive;
 import com.google.android.gms.plus.Plus;
 
 import org.json.JSONException;
@@ -52,6 +46,8 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
 
     private ImageView gplusbutton;
 
+    private Context context;
+
     public  static CallbackManager callbackmanager;
 
 
@@ -61,95 +57,77 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_splash_screen);
+        context = getApplicationContext();
         System.out.println("IN Flash Screen Class *****");
 
+        final boolean checkConnection=new ApplicationUtility().checkConnection(this);
+        if(checkConnection) {
 
-        Button btnsignin = (Button)findViewById(R.id.btnsignin);
-          Button     btnsignup = (Button)findViewById(R.id.btnsignup);
-
-
-        btnsignin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getBaseContext(),LoginScreen.class);
-                startActivity(i);
-            }
-        });
-
-        btnsignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-               // updateSizeInfo();
-                Intent i = new Intent(getBaseContext(),SignUp.class);
-                startActivity(i);
-            }
-        });
+            Button btnsignin = (Button) findViewById(R.id.btnsignin);
+            Button btnsignup = (Button) findViewById(R.id.btnsignup);
 
 
+            btnsignin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                        Intent i = new Intent(getBaseContext(), LoginScreen.class);
+                        startActivity(i);
+
+                }
+            });
+
+            btnsignup.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
 
-
-        fbbutton = (ImageView) findViewById(R.id.login_button);
-
-        gplusbutton = (ImageView) findViewById(R.id.gplusbutton);
-
-        fbbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onFblogin();
-            }
-        });
+                    Intent i = new Intent(getBaseContext(), SignUp.class);
+                    startActivity(i);}
 
 
-        gplusbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                signInWithGplus();
-
-            }
-        });
+            });
 
 
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this).addApi(Plus.API, null)
-                .addScope(Plus.SCOPE_PLUS_LOGIN).build();
+            fbbutton = (ImageView) findViewById(R.id.login_button);
 
-        /*mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApiIfAvailable(Drive.API)
-                .addScope(Drive.SCOPE_FILE)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .build();*/
+            gplusbutton = (ImageView) findViewById(R.id.gplusbutton);
 
+            fbbutton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onFblogin();
+                }
+            });
 
 
+            gplusbutton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-/*
-         //  For finding size of button in pixels //
+                    signInWithGplus();
 
-        top.post(new Runnable(){
-            public void run(){
-                int height = top.getHeight();
-                int weight = top.getWidth();
-
-
-                System.out.println("HEIGHT gergs    ++"+height);
-                System.out.println("WIDTH ++"+weight);
-
-            }
-        });
-*/
+                }
+            });
 
 
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this).addApi(Plus.API, null)
+                    .addScope(Plus.SCOPE_PLUS_LOGIN).build();
+
+        }
+        else
+
+        {
+            Toast.makeText(SplashScreen.this ,"Please check internet connection",Toast.LENGTH_LONG).show();
+        }
 
     }
+      /* End of the onCreate()   */
 
 
-
-
+    boolean checkConnection=new ApplicationUtility().checkConnection(this);
     private void onFblogin()
     {
         callbackmanager = CallbackManager.Factory.create();
@@ -214,14 +192,25 @@ public class SplashScreen extends Activity implements GoogleApiClient.Connection
 
     protected void onStart() {
         super.onStart();
-        mGoogleApiClient.connect();
+        if(checkConnection) {
+            mGoogleApiClient.connect();
+        }
+        else {
+           // Toast.makeText(SplashScreen.this,"Please Check Connection ",Toast.LENGTH_LONG).show();
+        }
+
+
     }
 
     protected void onStop() {
         super.onStop();
-        if (mGoogleApiClient.isConnected()) {
-            mGoogleApiClient.disconnect();
-        }
+            if(checkConnection) {
+                if (mGoogleApiClient.isConnected()) {
+                    mGoogleApiClient.disconnect();
+                }
+            }
+        else {}
+
     }
 
     /**

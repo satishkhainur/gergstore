@@ -1,19 +1,16 @@
-package com.example.appsriv01.gergstore;
+package com.example.appsriv01.gergstore.Activity;
 
-import android.content.Intent;
-import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewStub;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.example.appsriv01.gergstore.Adapter.CustGridSubcategory;
+import com.example.appsriv01.gergstore.Adapter.CustListSubcategory;
+import com.example.appsriv01.gergstore.R;
 
 public class SubCategoryPage extends AppCompatActivity {
 
@@ -146,11 +143,13 @@ public class SubCategoryPage extends AppCompatActivity {
             }
         });
 
-                   /* imagesub = (ImageView) findViewById(R.id.imagesub);₹
+                   /*
+                     imagesub = (ImageView) findViewById(R.id.imagesub);₹
                     *  text11 = (TextView) findViewById(R.id.grid_subprod1);
                     * text12 = (TextView) findViewById(R.id.grid_subprod2);
                     * text13 = (TextView) findViewById(R.id.grid_subprod3);
-*/
+                    *
+                    */
       grid.setAdapter(new CustGridSubcategory(SubCategoryPage.this, text1, text2, text3, imageId));
 
      /*   grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {

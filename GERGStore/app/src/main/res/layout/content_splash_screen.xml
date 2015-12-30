@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="100"
     android:background="@drawable/landingbackground"
-    tools:context="com.example.appsriv01.gergstore.SplashScreen">
+    tools:context=".Activity.SplashScreen">
 
 
 
@@ -15,9 +15,9 @@
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_weight="70">
+    android:layout_weight="65">
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="70"/>
 
@@ -56,29 +56,52 @@
     </LinearLayout>
 
 
-/////last layout
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:gravity="center"
-        android:src="@drawable/bgforsocialmedia"
-        android:layout_weight="03">
+        android:orientation="vertical"
+        android:background="@drawable/bgforsocialmedia"
+        android:layout_weight="10">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Connect Using "
             android:textSize="12sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:gravity="top|center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/fbicon24x24"/>
+            <ImageView
+                android:id="@+id/gplusbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gicon24x24"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
-    /////lastlayout
-    <LinearLayout
+   <!-- <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="03"
+        android:layout_height="0dp"
+        android:layout_weight="10"
         android:gravity="top|center"
-        android:src="@drawable/bgforsocialmedia"
+        android:background="@drawable/bgforsocialmedia"
         android:orientation="horizontal">
 
 
@@ -95,6 +118,6 @@
             android:src="@drawable/gicon24x24"/>
 
     </LinearLayout>
-
+-->
 </LinearLayout>
 

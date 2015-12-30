@@ -1,16 +1,16 @@
 
-package com.example.appsriv01.gergstore;
+package com.example.appsriv01.gergstore.Activity;
 
 
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toolbar;
+
+import com.example.appsriv01.gergstore.R;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity
         //setSupportActionBar(myToolbar);
         image = (ImageView)findViewById(R.id.image);
 
-        image.setOnClickListener(new View.OnClickListener() {
+        image.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this ,CategoryPage.class);
@@ -33,10 +34,6 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
-
-
-
-
     }
 
 }

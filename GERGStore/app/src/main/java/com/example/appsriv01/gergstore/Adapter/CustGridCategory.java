@@ -1,16 +1,16 @@
-package com.example.appsriv01.gergstore;
+package com.example.appsriv01.gergstore.Adapter;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.appsriv01.gergstore.R;
+import com.example.appsriv01.gergstore.Activity.SubCategoryPage;
 
 /**
  * Created by appsriv01 on 21/12/15.

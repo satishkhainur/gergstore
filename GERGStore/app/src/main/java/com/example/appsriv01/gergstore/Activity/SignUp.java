@@ -1,17 +1,18 @@
-package com.example.appsriv01.gergstore;
+package com.example.appsriv01.gergstore.Activity;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Toast;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentSender;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
+import com.example.appsriv01.gergstore.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -19,11 +20,9 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
@@ -34,6 +33,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
+import java.util.Calendar;
 
 public class SignUp extends Activity implements  ConnectionCallbacks, OnConnectionFailedListener{
 
@@ -54,7 +54,16 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
 
     public  static CallbackManager callbackmanager;
 
-    private ImageView signup;
+    private ImageView signup,calender;
+
+    private EditText datetext;
+
+    private Calendar cal;
+    private int day;
+    private int month;
+    private int year;
+
+
 
 
 
@@ -67,6 +76,13 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
 
         fbbutton = (ImageView) findViewById(R.id.login_button);
         signup = (ImageView) findViewById(R.id.signup);
+        calender = (ImageView)findViewById(R.id.calender);
+        datetext = (EditText)findViewById(R.id.date);
+        cal = Calendar.getInstance();
+        day = cal.get(Calendar.DAY_OF_MONTH);
+        month = cal.get(Calendar.MONTH);
+        year = cal.get(Calendar.YEAR);
+
 
         fbbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +116,16 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
             }
         });*/
 
+        calender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog(0);
+            }
+        });
+
     }
+
+
 
 
 
@@ -121,7 +146,7 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
                     public void onSuccess(LoginResult loginResult) {
 
                         System.out.println("Success");
-                        Intent i = new Intent(SignUp.this,SignUp.class);
+                        Intent i = new Intent(SignUp.this, SignUp.class);
                         startActivity(i);
                         GraphRequest.newMeRequest(
                                 loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
@@ -265,6 +290,19 @@ public class SignUp extends Activity implements  ConnectionCallbacks, OnConnecti
 
 
 
+
+    @Override
+    @Deprecated
+    protected Dialog onCreateDialog(int id) {
+        return new DatePickerDialog(this, datePickerListener, year, month, day);
+    }
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+            datetext.setText(selectedDay + " / " + (selectedMonth + 1) + " / "
+                    + selectedYear);
+        }
+    };
 
     /*@Override
     public void onClick(View v)

@@ -1,4 +1,4 @@
-package com.example.appsriv01.gergstore;
+package com.example.appsriv01.gergstore.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.appsriv01.gergstore.Activity.ProductScreen;
+import com.example.appsriv01.gergstore.R;
 
 /**
  * Created by appsriv01 on 21/12/15.

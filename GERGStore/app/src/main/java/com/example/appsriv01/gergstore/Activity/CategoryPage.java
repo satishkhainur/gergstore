@@ -1,31 +1,20 @@
-package com.example.appsriv01.gergstore;
+package com.example.appsriv01.gergstore.Activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+
+import com.example.appsriv01.gergstore.Adapter.CustGridCategory;
+import com.example.appsriv01.gergstore.R;
 
 public class CategoryPage extends FragmentActivity {
 
@@ -55,13 +44,12 @@ public class CategoryPage extends FragmentActivity {
     };
 
 
-   // TextView t1, t2, t3, t4, t5, t6, t7, t8, t9;
-   // ImageView im1, im2, ig3, ig4, ig5;
-  //  private ImageView imageclick;
 
     static final int NUM_ITEMS = 6;
+
     //ImageFragmentPagerAdapter imageFragmentPagerAdapter;
     ViewPager viewPager;
+
     CustomPagerAdapter mCustomPagerAdapter;
 
     @Override
@@ -75,37 +63,14 @@ public class CategoryPage extends FragmentActivity {
         viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(mCustomPagerAdapter);
 
+        viewPager.setClipToPadding(false);
+        viewPager.setPadding(150, 0, 150, 0);
+        viewPager.setClipChildren(false);
 
-      /*  imageclick =(ImageView)findViewById(R.id.imageclick);
-
-        imageclick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(CategoryPage.this,SubCategoryPage.class);
-                startActivity(i);
-            }
-        });*/
-
-
-
-//////
-
-     cat_gird = (GridView) findViewById(R.id.category_page_grid);
+        cat_gird = (GridView) findViewById(R.id.category_page_grid);
         cat_gird.setAdapter(new CustGridCategory(CategoryPage.this,cat_txt,cat_image));
+     }
 
-       /* cat_gird.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Intent i = new Intent(CategoryPage.this,SubCategoryPage.class);
-                startActivity(i);
-
-            }
-        });*/
-
-
-    }
 
 
     class CustomPagerAdapter extends PagerAdapter {
@@ -113,24 +78,28 @@ public class CategoryPage extends FragmentActivity {
         Context mContext;
         LayoutInflater mLayoutInflater;
 
-        int[] mResources = {
+        int[] mResources =
+                {
                 R.drawable.landingbackground,
                 R.drawable.category,
                 R.drawable.landingbackground,
                 R.drawable.category,
                 R.drawable.landingbackground,
                 R.drawable.category
-        };
+                };
 
-        public CustomPagerAdapter(Context context) {
+        public CustomPagerAdapter(Context context)
+        {
             mContext = context;
             mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
+
 
         @Override
         public int getCount() {
             return mResources.length;
         }
+
 
         @Override
         public boolean isViewFromObject(View view, Object object) {

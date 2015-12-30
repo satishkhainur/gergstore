@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashScreen"
+            android:name=".Activity.SplashScreen"
             android:label="@string/title_activity_splash_screen"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -25,11 +25,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUp"
+            android:name=".Activity.SignUp"
             android:label="@string/title_activity_sign_up"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:label="MainActivty"
             android:theme="@style/AppTheme" />
         <activity
@@ -56,23 +56,23 @@
             android:value="@string/facebook_app_id" />
 
         <activity
-            android:name=".LoginScreen"
+            android:name=".Activity.LoginScreen"
             android:label="@string/title_activity_login_screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CategoryPage"
+            android:name=".Activity.CategoryPage"
             android:label="@string/title_activity_category_page"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".SubCategoryPage"
+            android:name=".Activity.SubCategoryPage"
             android:label="@string/title_activity_sub_category_page"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ProductScreen"
+            android:name=".Activity.ProductScreen"
             android:label="@string/title_activity_product_screen"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Cart"
+            android:name=".Activity.Cart"
             android:label="@string/title_activity_cart"
             android:theme="@style/AppTheme"></activity>
     </application>
